@@ -1,35 +1,67 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using RPG.Movement;
 using UnityEngine;
+using RPG.Combat;
 
-public class PlayerController : MonoBehaviour
+namespace RPG.Control
 {
-    Mover mover;
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        mover = GetComponent<Mover>();
-    }
+        Mover mover;
+        Fighter fighter;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButton(0))
+        // Start is called before the first frame update
+        void Start()
         {
-            MoveToClickedCursorPosition();
-        }
-    }
-
-    private void MoveToClickedCursorPosition()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        bool hasRaycastHit = Physics.Raycast(ray, out RaycastHit raycastHit);
-
-        if (hasRaycastHit)
-        {
-            mover.MoveTo(raycastHit.point);
+            mover = GetComponent<Mover>();
+            fighter = GetComponent<Fighter>();
         }
 
+        // Update is called once per frame
+        void Update()
+        {
+            InteractWithCombat();
+            InteractWithMovement();
+        }
+
+        private void InteractWithCombat()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            foreach (RaycastHit hit in hits)
+            {
+                CombatTarget target = hit.collider.GetComponent<CombatTarget>();
+                if (target == null) continue;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    fighter.Attack(target);
+                }
+            }
+        }
+
+        private void InteractWithMovement()
+        {
+            if (Input.GetMouseButton(0))
+            {
+                MoveToClickedCursorPosition();
+            }
+        }
+
+        private void MoveToClickedCursorPosition()
+        {
+            bool hasRaycastHit = Physics.Raycast(GetMouseRay(), out RaycastHit raycastHit);
+
+            if (hasRaycastHit)
+            {
+                mover.MoveTo(raycastHit.point);
+            }
+
+        }
+
+        private static Ray GetMouseRay()
+        {
+            return Camera.main.ScreenPointToRay(Input.mousePosition);
+        }
     }
 }
+
