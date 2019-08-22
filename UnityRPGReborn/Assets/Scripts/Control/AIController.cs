@@ -1,4 +1,6 @@
 ﻿using RPG.Combat;
+using RPG.Core;
+using RPG.Movement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,15 +14,25 @@ namespace RPG.Control
 
         Fighter fighter;
         GameObject player;
+        Health health;
+        Mover mover;
+
+        Vector3 startingPosition;
+        Quaternion startingRotation;
 
         private void Start()
         {
             player = GameObject.FindWithTag("Player");
             fighter = GetComponent<Fighter>();
+            health = GetComponent<Health>();
+            mover = GetComponent<Mover>();
+            startingPosition = transform.position;
+            startingRotation = Quaternion.identity;
         }
 
         private void Update()
         {
+            if (health.IsDead()) { return; }
             ShouldAIChase();   
         }
 
@@ -33,7 +45,7 @@ namespace RPG.Control
             }
             else
             {
-                fighter.Cancel();
+                mover.StartMoveAction(startingPosition);
             }
         }
 
@@ -41,6 +53,13 @@ namespace RPG.Control
         {
             float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
             return distanceToPlayer < chaseDistance;
+        }
+
+        //called by Unity
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, chaseDistance);
         }
     }
 }
