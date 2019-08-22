@@ -76,7 +76,7 @@ namespace RPG.Combat
             return Vector3.Distance(this.transform.position, target.transform.position) < weaponRange;
         }
 
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             actionscheduler.StartAction(this);
             print("i fuck you up!");
@@ -95,7 +95,7 @@ namespace RPG.Combat
             animator.SetTrigger("stopAttack");
         }
 
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null) { return false; }
             Health targetToTest = combatTarget.GetComponent<Health>();
