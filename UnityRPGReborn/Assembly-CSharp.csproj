@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Movement\Mover.cs" />
     <None Include="Assets\Asset Packs\Animations\README - Usage Rights for these assets 1.txt" />
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
+    <None Include="Assets\Asset Packs\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
