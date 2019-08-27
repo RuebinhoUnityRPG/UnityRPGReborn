@@ -60,7 +60,7 @@ namespace RPG.Control
             {
                 if (Input.GetMouseButton(0))
                 {
-                    mover.StartMoveAction(raycastHit.point);
+                    mover.StartMoveAction(raycastHit.point, 1f);
                 }
                 return true;
             }
