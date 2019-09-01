@@ -13,7 +13,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &2942381936071563195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,7 +27,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  chaseSpeedFraction: 0.8
   suspicionTime: 5
+  patrolSpeedFraction: 0.2
   patrolPath: {fileID: 0}
   waypointTolerance: 1
   waypointDwellTime: 2
@@ -114,15 +116,15 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2849309731648340645, guid: 4902d651b701b604b9ff9695f0718aa6,
-        type: 3}
-      propertyPath: healthPoints
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: -6116388135537209198, guid: 4902d651b701b604b9ff9695f0718aa6,
         type: 3}
       propertyPath: weaponDamage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849309731648340645, guid: 4902d651b701b604b9ff9695f0718aa6,
+        type: 3}
+      propertyPath: healthPoints
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4902d651b701b604b9ff9695f0718aa6, type: 3}

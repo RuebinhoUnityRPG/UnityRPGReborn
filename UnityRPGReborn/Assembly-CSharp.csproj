@@ -74,11 +74,15 @@
     <Compile Include="Assets\Scripts\Core\Health.cs" />
     <Compile Include="Assets\Scripts\Core\IAction.cs" />
     <Compile Include="Assets\Scripts\Movement\Mover.cs" />
+    <Compile Include="Assets\Scripts\Scene Management\Portal.cs" />
     <None Include="Assets\Asset Packs\Animations\README - Usage Rights for these assets 1.txt" />
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
     <None Include="Assets\Asset Packs\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
@@ -116,6 +120,9 @@
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
@@ -133,12 +140,6 @@
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>E:/Dennis/GameDev/UnityRPGReborn/UnityRPGReborn/UnityRPGReborn/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
